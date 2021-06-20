@@ -75,7 +75,9 @@ class AdminController extends Controller
     {
         $cpu=$request->input('cpu');
         $gpu=$request->input('gpu');
-        $data=DB::select("select name from games where cpu='$cpu' &&  gpu='$gpu'");
+        $data=DB::select("select name from games where cpu LIKE '%$cpu%' &&  gpu LIKE '%$gpu%'");
+        
+
         return view('pra')->withvalue($data);
     }
     public function vs(Request $request) // for hardware comparison option

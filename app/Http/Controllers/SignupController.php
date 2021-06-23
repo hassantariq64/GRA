@@ -171,7 +171,7 @@ class SignupController extends Controller
             return view('login');
         }
     }
-    public function solution(Request $request) //  for requesting cpu form
+    public function solution(Request $request) 
     {   
         if($request->session()->has('u'))
 
